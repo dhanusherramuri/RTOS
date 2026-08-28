@@ -1,0 +1,8 @@
+
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -g -c add_prog.c -o add_prog.o
+arm-none-eabi-as -mcpu=cortex-m3 -mthumb startup_stm32f103.s -o startup.o
+arm-none-eabi-ld -T STM32F103C8.ld add_prog.o startup.o -o firmware.elf
+
+st-flash write firmware.bin 0x08000000
+
+arm-none-eabi-objcopy -O binary firmware.elf firmware.bin
