@@ -1,0 +1,84 @@
+msis@msis-HP-Pro-Tower-400-G9-PCI-Desktop-PC:/media/msis/New Volume/261100610017/RTOS/002_add_prog$ gdb-multiarch firmware.elf
+GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from firmware.elf...
+(gdb) 
+(gdb) target extended-remote :4242
+Remote debugging using :4242
+di0x08000094 in zero_bss_done ()
+(gdb) display/i $pc
+1: x/i $pc
+=> 0x8000094 <zero_bss_done+12>:	b.n	0x8000094 <zero_bss_done+12>
+(gdb) display/ $sp
+2: $sp = (void *) 0x20005000
+(gdb) display/x $r7
+3: /x $r7 = 0x20004ff0
+(gdb) display/x $sp
+4: /x $sp = 0x20005000
+(gdb) display/x $lr
+5: /x $lr = 0x8000095
+(gdb) break main
+Breakpoint 1 at 0x8000046: file add_prog.c, line 3.
+Note: automatically using hardware breakpoints for read-only addresses.
+(gdb) break Reset_Handle
+Function "Reset_Handle" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) n
+(gdb) break Reset_Handler
+Breakpoint 2 at 0x8000064
+(gdb) monitor reset halt
+(gdb) set disassemble-next-line on
+(gdb) break main
+Note: breakpoint 1 also set at pc 0x8000046.
+Breakpoint 3 at 0x8000046: file add_prog.c, line 3.
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at add_prog.c:3
+3		int a = 10, b = 20;
+=> 0x08000046 <main+6>:	2305    	movs	r3, #5
+   0x08000048 <main+8>:	607b    	str	r3, [r7, #4]
+1: x/i $pc
+=> 0x8000046 <main+6>:	movs	r3, #5
+2: $sp = (void *) 0x20004ff0
+3: /x $r7 = 0x20004ff0
+4: /x $sp = 0x20004ff0
+5: /x $lr = 0x8000095
+(gdb) next
+4		int c = a + b;
+=> 0x0800004e <main+14>:	687b    	ldr	r3, [r7, #4]
+   0x08000050 <main+16>:	2b00    	cmp	r3, #0
+   0x08000052 <main+18>:	d102    	bne.n	0x800005a <main+26>
+   0x08000054 <main+20>:	687b    	ldr	r3, [r7, #4]
+1: x/i $pc
+=> 0x800004e <main+14>:	ldr	r3, [r7, #4]
+2: $sp = (void *) 0x20004ff0
+3: /x $r7 = 0x20004ff0
+4: /x $sp = 0x20004ff0
+5: /x $lr = 0x8000095
+(gdb) next
+0x08000062 in ?? ()
+=> 0x08000062:	370c    	adds	r7, #12
+1: x/i $pc
+=> 0x8000062:	adds	r7, #12
+2: $sp = (void *) 0x20004ff0
+3: /x $r7 = 0x20004ff0
+4: /x $sp = 0x20004ff0
+5: /x $lr = 0x8000095
+(gdb) next
+Cannot find bounds of current function
+(gdb) 
+
+
