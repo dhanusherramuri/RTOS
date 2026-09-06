@@ -1,0 +1,118 @@
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00010000         xr
+RAM              0x20000000         0x00005000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD startup_stm32f103.o
+LOAD add_prog.o
+                0x20005000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+
+.isr_vector     0x08000000       0x40
+ *(.isr_vector)
+ .isr_vector    0x08000000       0x40 startup_stm32f103.o
+
+.text           0x08000040       0x34
+ *(.text*)
+ .text          0x08000040        0x0 startup_stm32f103.o
+ .text.Reset_Handler
+                0x08000040       0x10 startup_stm32f103.o
+                0x08000040                Reset_Handler
+ .text.Default_Handler
+                0x08000050        0x2 startup_stm32f103.o
+ .text          0x08000052       0x22 add_prog.o
+                0x08000052                main
+ *(.rodata*)
+                0x08000074                        _sidata = LOADADDR (.data)
+
+.glue_7         0x08000074        0x0
+ .glue_7        0x08000074        0x0 linker stubs
+
+.glue_7t        0x08000074        0x0
+ .glue_7t       0x08000074        0x0 linker stubs
+
+.vfp11_veneer   0x08000074        0x0
+ .vfp11_veneer  0x08000074        0x0 linker stubs
+
+.v4_bx          0x08000074        0x0
+ .v4_bx         0x08000074        0x0 linker stubs
+
+.iplt           0x08000074        0x0
+ .iplt          0x08000074        0x0 startup_stm32f103.o
+
+.rel.dyn        0x08000074        0x0
+ .rel.iplt      0x08000074        0x0 startup_stm32f103.o
+
+.data           0x20000000        0x0 load address 0x08000074
+                0x20000000                        _sdata = .
+ *(.data*)
+ .data          0x20000000        0x0 startup_stm32f103.o
+ .data          0x20000000        0x0 add_prog.o
+                0x20000000                        _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x08000074
+ .igot.plt      0x20000000        0x0 startup_stm32f103.o
+
+.bss            0x20000000        0x0 load address 0x08000074
+                0x20000000                        _sbss = .
+ *(.bss*)
+ .bss           0x20000000        0x0 startup_stm32f103.o
+ .bss           0x20000000        0x0 add_prog.o
+ *(COMMON)
+                0x20000000                        _ebss = .
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x00000000       0x2f
+ .ARM.attributes
+                0x00000000       0x21 startup_stm32f103.o
+ .ARM.attributes
+                0x00000021       0x2d add_prog.o
+
+.comment        0x00000000       0x26
+ .comment       0x00000000       0x26 add_prog.o
+                                 0x27 (size before relaxing)
+
+.debug_line     0x00000000       0xa2
+ .debug_line    0x00000000       0x59 startup_stm32f103.o
+ .debug_line    0x00000059       0x49 add_prog.o
+
+.debug_line_str
+                0x00000000       0x3c
+ .debug_line_str
+                0x00000000       0x3c startup_stm32f103.o
+
+.debug_info     0x00000000       0xaa
+ .debug_info    0x00000000       0x3d startup_stm32f103.o
+ .debug_info    0x0000003d       0x6d add_prog.o
+
+.debug_abbrev   0x00000000       0x74
+ .debug_abbrev  0x00000000       0x26 startup_stm32f103.o
+ .debug_abbrev  0x00000026       0x4e add_prog.o
+
+.debug_aranges  0x00000000       0x48
+ .debug_aranges
+                0x00000000       0x28 startup_stm32f103.o
+ .debug_aranges
+                0x00000028       0x20 add_prog.o
+
+.debug_str      0x00000000       0xd0
+ .debug_str     0x00000000       0xd0 startup_stm32f103.o
+                                 0x69 (size before relaxing)
+ .debug_str     0x000000d0        0x0 add_prog.o
+                                 0x8f (size before relaxing)
+
+.debug_rnglists
+                0x00000000       0x19
+ .debug_rnglists
+                0x00000000       0x19 startup_stm32f103.o
+
+.debug_frame    0x00000000       0x38
+ .debug_frame   0x00000000       0x38 add_prog.o
