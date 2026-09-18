@@ -30,9 +30,10 @@ void vApplicationTickHook(void)
     g_msticks++;
 }
 
-static const led_task_args_t led_a = { GPIOC, 13, 1000 };
-static const led_task_args_t led_b = { GPIOA, 0,  3000 };
-static const led_task_args_t led_c = { GPIOA, 1,  6000 };
+static const led_task_args_t led_a = { GPIOC, 13, 50};
+static const led_task_args_t led_b = { GPIOA, 0,  500};
+static const led_task_args_t led_c = { GPIOA, 1,  30};
+static const led_task_args_t led_d = {GPIOA, 2,   40};
 static void delay_ms(uint32_t ms)
 {
     uint32_t target = g_msticks + ms;
@@ -54,7 +55,7 @@ static void led_task(void *pvParameters)
 
     for (;;) {
         args->port->ODR ^= (1U << args->pin);
-        delay_ms(500);
+        delay_ms(150);
     }
 }
 
@@ -65,10 +66,12 @@ int main(void)
     gpio_output_init(led_a.port, led_a.pin);
     gpio_output_init(led_b.port, led_b.pin);
     gpio_output_init(led_c.port, led_c.pin);
+    gpio_output_init(led_d.port, led_d.pin);
 
     xTaskCreate(led_task, "led_1s", configMINIMAL_STACK_SIZE, (void *)&led_a, tskIDLE_PRIORITY + 1, NULL);
-    xTaskCreate(led_task, "led_2s", configMINIMAL_STACK_SIZE, (void *)&led_b, tskIDLE_PRIORITY + 0, NULL);
-    xTaskCreate(led_task, "led_3s", configMINIMAL_STACK_SIZE, (void *)&led_c, tskIDLE_PRIORITY +0, NULL);
+    xTaskCreate(led_task, "led_2s", configMINIMAL_STACK_SIZE, (void *)&led_b, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(led_task, "led_3s", configMINIMAL_STACK_SIZE, (void *)&led_c, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(led_task, "led_4s", configMINIMAL_STACK_SIZE, (void *)&led_d, tskIDLE_PRIORITY + 1, NULL);
 
     vTaskStartScheduler();
 

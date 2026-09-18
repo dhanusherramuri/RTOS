@@ -1,8 +1,7 @@
-ROOT_DIR := ..
+ROOT_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST)))..)
 PROJECT  := led-blink
 
 SRCS := main.c
 
-EXTRA_CFLAGS := -I../common
 
 include ../common/common.mk

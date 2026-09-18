@@ -15,14 +15,14 @@ SIZE    = $(PREFIX)-size
 
 MCU_FLAGS = -mcpu=cortex-m3 -mthumb
 
-COMMON_DIR = $(ROOT_DIR)/common
+COMMON_DIR = $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 STARTUP    = $(COMMON_DIR)/startup_stm32f103.s
 LDSCRIPT   = $(COMMON_DIR)/stm32f103.ld
 BUILD_DIR  = build
 
 CFLAGS  = $(MCU_FLAGS) -std=gnu11 -Os -g3 -Wall -Wextra
 CFLAGS += -ffunction-sections -fdata-sections
-CFLAGS += -I$(COMMON_DIR)
+CFLAGS += -I"$(COMMON_DIR)"
 CFLAGS += $(EXTRA_CFLAGS)
 
 LDFLAGS  = $(MCU_FLAGS)

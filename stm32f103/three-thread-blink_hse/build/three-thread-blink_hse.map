@@ -64,8 +64,6 @@ Discarded input sections
  .text          0x00000000        0x0 build/tasks.o
  .data          0x00000000        0x0 build/tasks.o
  .bss           0x00000000        0x0 build/tasks.o
- .text.prvAddCurrentTaskToDelayedList
-                0x00000000       0xac build/tasks.o
  .text.prvTaskIsTaskSuspended
                 0x00000000       0x2c build/tasks.o
  .text.vTaskDelete
@@ -84,8 +82,6 @@ Discarded input sections
                 0x00000000        0xc build/tasks.o
  .text.pcTaskGetName
                 0x00000000       0x10 build/tasks.o
- .text.vTaskDelay
-                0x00000000       0x2e build/tasks.o
  .text.xTaskCatchUpTicks
                 0x00000000       0x24 build/tasks.o
  .text.vTaskSuspend
@@ -185,8 +181,6 @@ Discarded input sections
  .bss           0x00000000        0x0 build/list.o
  .text.vListInsertEnd
                 0x00000000       0x16 build/list.o
- .text.vListInsert
-                0x00000000       0x2e build/list.o
  .debug_macro   0x00000000      0xac0 build/list.o
  .debug_macro   0x00000000       0x24 build/list.o
  .debug_macro   0x00000000       0x22 build/list.o
@@ -347,7 +341,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x161 build/queue.o
  .debug_macro   0x00000000       0x80 build/queue.o
  .debug_line    0x00000000     0x11e6 build/queue.o
- .debug_str     0x00000000    0x129a0 build/queue.o
+ .debug_str     0x00000000    0x1299c build/queue.o
  .comment       0x00000000       0x27 build/queue.o
  .debug_frame   0x00000000      0x288 build/queue.o
  .ARM.attributes
@@ -531,182 +525,187 @@ END GROUP
                 0x08000000                g_pfnVectorTable
                 0x080000ec                        . = ALIGN (0x4)
 
-.text           0x080000ec      0xbec
+.text           0x080000ec      0xcf0
                 0x080000ec                        . = ALIGN (0x4)
  *(.text)
  .text          0x080000ec       0xa0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
                 0x080000ec                memset
  *(.text*)
  .text.led_task
-                0x0800018c       0x24 build/main.o
- .text.vApplicationTickHook
-                0x080001b0       0x10 build/main.o
-                0x080001b0                vApplicationTickHook
+                0x0800018c       0x1c build/main.o
  .text.startup.main
-                0x080001c0       0xe0 build/main.o
-                0x080001c0                main
+                0x080001a8      0x110 build/main.o
+                0x080001a8                main
  .text.vApplicationStackOverflowHook
-                0x080002a0        0x2 build/main.o
-                0x080002a0                vApplicationStackOverflowHook
- *fill*         0x080002a2        0x2 
+                0x080002b8        0x2 build/main.o
+                0x080002b8                vApplicationStackOverflowHook
+ .text.vApplicationIdleHook
+                0x080002ba        0x4 build/main.o
+                0x080002ba                vApplicationIdleHook
+ *fill*         0x080002be        0x2 
+ .text.prvAddCurrentTaskToDelayedList
+                0x080002c0       0xac build/tasks.o
  .text.prvResetNextTaskUnblockTime
-                0x080002a4       0x24 build/tasks.o
+                0x0800036c       0x24 build/tasks.o
  .text.prvCheckTasksWaitingTermination
-                0x080002c8       0x48 build/tasks.o
+                0x08000390       0x48 build/tasks.o
  .text.prvIdleTask
-                0x08000310       0x28 build/tasks.o
+                0x080003d8       0x2c build/tasks.o
  .text.xTaskCreate
-                0x08000338      0x1c0 build/tasks.o
-                0x08000338                xTaskCreate
+                0x08000404      0x1c0 build/tasks.o
+                0x08000404                xTaskCreate
  .text.vTaskStartScheduler
-                0x080004f8       0x7c build/tasks.o
-                0x080004f8                vTaskStartScheduler
+                0x080005c4       0x7c build/tasks.o
+                0x080005c4                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x08000574       0x10 build/tasks.o
-                0x08000574                vTaskSuspendAll
+                0x08000640       0x10 build/tasks.o
+                0x08000640                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x08000584      0x188 build/tasks.o
-                0x08000584                xTaskIncrementTick
+                0x08000650      0x178 build/tasks.o
+                0x08000650                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x0800070c      0x14c build/tasks.o
-                0x0800070c                xTaskResumeAll
+                0x080007c8      0x14c build/tasks.o
+                0x080007c8                xTaskResumeAll
+ .text.vTaskDelay
+                0x08000914       0x2e build/tasks.o
+                0x08000914                vTaskDelay
+ *fill*         0x08000942        0x2 
  .text.vTaskSwitchContext
-                0x08000858       0x9c build/tasks.o
-                0x08000858                vTaskSwitchContext
+                0x08000944       0x9c build/tasks.o
+                0x08000944                vTaskSwitchContext
  .text.vListInitialise
-                0x080008f4       0x16 build/list.o
-                0x080008f4                vListInitialise
+                0x080009e0       0x16 build/list.o
+                0x080009e0                vListInitialise
  .text.vListInitialiseItem
-                0x0800090a        0x6 build/list.o
-                0x0800090a                vListInitialiseItem
+                0x080009f6        0x6 build/list.o
+                0x080009f6                vListInitialiseItem
+ .text.vListInsert
+                0x080009fc       0x2e build/list.o
+                0x080009fc                vListInsert
  .text.uxListRemove
-                0x08000910       0x1e build/list.o
-                0x08000910                uxListRemove
+                0x08000a2a       0x1e build/list.o
+                0x08000a2a                uxListRemove
  .text.prvTaskExitError
-                0x0800092e       0x20 build/port.o
- *fill*         0x0800094e        0x2 
+                0x08000a48       0x20 build/port.o
  .text.prvPortStartFirstTask
-                0x08000950       0x20 build/port.o
+                0x08000a68       0x20 build/port.o
  .text.pxPortInitialiseStack
-                0x08000970       0x24 build/port.o
-                0x08000970                pxPortInitialiseStack
+                0x08000a88       0x24 build/port.o
+                0x08000a88                pxPortInitialiseStack
  .text.SVC_Handler
-                0x08000994       0x24 build/port.o
-                0x08000994                SVC_Handler
+                0x08000aac       0x24 build/port.o
+                0x08000aac                SVC_Handler
  .text.vPortEnterCritical
-                0x080009b8       0x20 build/port.o
-                0x080009b8                vPortEnterCritical
+                0x08000ad0       0x20 build/port.o
+                0x08000ad0                vPortEnterCritical
  .text.vPortExitCritical
-                0x080009d8       0x14 build/port.o
-                0x080009d8                vPortExitCritical
+                0x08000af0       0x14 build/port.o
+                0x08000af0                vPortExitCritical
  .text.PendSV_Handler
-                0x080009ec       0x44 build/port.o
-                0x080009ec                PendSV_Handler
+                0x08000b04       0x44 build/port.o
+                0x08000b04                PendSV_Handler
  .text.SysTick_Handler
-                0x08000a30       0x2c build/port.o
-                0x08000a30                SysTick_Handler
+                0x08000b48       0x2c build/port.o
+                0x08000b48                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x08000a5c       0x16 build/port.o
-                0x08000a5c                vPortSetupTimerInterrupt
- *fill*         0x08000a72        0x2 
+                0x08000b74       0x18 build/port.o
+                0x08000b74                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x08000a74       0x40 build/port.o
-                0x08000a74                xPortStartScheduler
+                0x08000b8c       0x40 build/port.o
+                0x08000b8c                xPortStartScheduler
  .text.pvPortMalloc
-                0x08000ab4       0xf8 build/heap_4.o
-                0x08000ab4                pvPortMalloc
+                0x08000bcc       0xf8 build/heap_4.o
+                0x08000bcc                pvPortMalloc
  .text.vPortFree
-                0x08000bac       0x94 build/heap_4.o
-                0x08000bac                vPortFree
+                0x08000cc4       0x94 build/heap_4.o
+                0x08000cc4                vPortFree
  .text.Reset_Handler
-                0x08000c40       0x40 build/startup_stm32f103.o
-                0x08000c40                Reset_Handler
+                0x08000d58       0x40 build/startup_stm32f103.o
+                0x08000d58                Reset_Handler
  .text.Default_Handler
-                0x08000c80        0x2 build/startup_stm32f103.o
-                0x08000c80                EXTI2_IRQHandler
-                0x08000c80                DebugMon_Handler
-                0x08000c80                TIM1_CC_IRQHandler
-                0x08000c80                HardFault_Handler
-                0x08000c80                PVD_IRQHandler
-                0x08000c80                NMI_Handler
-                0x08000c80                EXTI3_IRQHandler
-                0x08000c80                EXTI0_IRQHandler
-                0x08000c80                I2C2_EV_IRQHandler
-                0x08000c80                UsageFault_Handler
-                0x08000c80                ADC1_2_IRQHandler
-                0x08000c80                SPI1_IRQHandler
-                0x08000c80                TAMPER_IRQHandler
-                0x08000c80                DMA1_Channel4_IRQHandler
-                0x08000c80                USART3_IRQHandler
-                0x08000c80                RTC_IRQHandler
-                0x08000c80                DMA1_Channel7_IRQHandler
-                0x08000c80                CAN1_RX1_IRQHandler
-                0x08000c80                TIM4_IRQHandler
-                0x08000c80                I2C1_EV_IRQHandler
-                0x08000c80                DMA1_Channel6_IRQHandler
-                0x08000c80                TIM3_IRQHandler
-                0x08000c80                RCC_IRQHandler
-                0x08000c80                TIM1_TRG_COM_IRQHandler
-                0x08000c80                DMA1_Channel1_IRQHandler
-                0x08000c80                EXTI15_10_IRQHandler
-                0x08000c80                EXTI9_5_IRQHandler
-                0x08000c80                SPI2_IRQHandler
-                0x08000c80                MemManage_Handler
-                0x08000c80                DMA1_Channel5_IRQHandler
-                0x08000c80                EXTI4_IRQHandler
-                0x08000c80                USB_LP_CAN1_RX0_IRQHandler
-                0x08000c80                USB_HP_CAN1_TX_IRQHandler
-                0x08000c80                DMA1_Channel3_IRQHandler
-                0x08000c80                TIM1_UP_IRQHandler
-                0x08000c80                WWDG_IRQHandler
-                0x08000c80                TIM2_IRQHandler
-                0x08000c80                TIM1_BRK_IRQHandler
-                0x08000c80                EXTI1_IRQHandler
-                0x08000c80                RTCAlarm_IRQHandler
-                0x08000c80                USART2_IRQHandler
-                0x08000c80                I2C2_ER_IRQHandler
-                0x08000c80                DMA1_Channel2_IRQHandler
-                0x08000c80                CAN1_SCE_IRQHandler
-                0x08000c80                FLASH_IRQHandler
-                0x08000c80                BusFault_Handler
-                0x08000c80                USART1_IRQHandler
-                0x08000c80                I2C1_ER_IRQHandler
-                0x08000c80                USBWakeUp_IRQHandler
+                0x08000d98        0x2 build/startup_stm32f103.o
+                0x08000d98                EXTI2_IRQHandler
+                0x08000d98                DebugMon_Handler
+                0x08000d98                TIM1_CC_IRQHandler
+                0x08000d98                HardFault_Handler
+                0x08000d98                PVD_IRQHandler
+                0x08000d98                NMI_Handler
+                0x08000d98                EXTI3_IRQHandler
+                0x08000d98                EXTI0_IRQHandler
+                0x08000d98                I2C2_EV_IRQHandler
+                0x08000d98                UsageFault_Handler
+                0x08000d98                ADC1_2_IRQHandler
+                0x08000d98                SPI1_IRQHandler
+                0x08000d98                TAMPER_IRQHandler
+                0x08000d98                DMA1_Channel4_IRQHandler
+                0x08000d98                USART3_IRQHandler
+                0x08000d98                RTC_IRQHandler
+                0x08000d98                DMA1_Channel7_IRQHandler
+                0x08000d98                CAN1_RX1_IRQHandler
+                0x08000d98                TIM4_IRQHandler
+                0x08000d98                I2C1_EV_IRQHandler
+                0x08000d98                DMA1_Channel6_IRQHandler
+                0x08000d98                TIM3_IRQHandler
+                0x08000d98                RCC_IRQHandler
+                0x08000d98                TIM1_TRG_COM_IRQHandler
+                0x08000d98                DMA1_Channel1_IRQHandler
+                0x08000d98                EXTI15_10_IRQHandler
+                0x08000d98                EXTI9_5_IRQHandler
+                0x08000d98                SPI2_IRQHandler
+                0x08000d98                MemManage_Handler
+                0x08000d98                DMA1_Channel5_IRQHandler
+                0x08000d98                EXTI4_IRQHandler
+                0x08000d98                USB_LP_CAN1_RX0_IRQHandler
+                0x08000d98                USB_HP_CAN1_TX_IRQHandler
+                0x08000d98                DMA1_Channel3_IRQHandler
+                0x08000d98                TIM1_UP_IRQHandler
+                0x08000d98                WWDG_IRQHandler
+                0x08000d98                TIM2_IRQHandler
+                0x08000d98                TIM1_BRK_IRQHandler
+                0x08000d98                EXTI1_IRQHandler
+                0x08000d98                RTCAlarm_IRQHandler
+                0x08000d98                USART2_IRQHandler
+                0x08000d98                I2C2_ER_IRQHandler
+                0x08000d98                DMA1_Channel2_IRQHandler
+                0x08000d98                CAN1_SCE_IRQHandler
+                0x08000d98                FLASH_IRQHandler
+                0x08000d98                BusFault_Handler
+                0x08000d98                USART1_IRQHandler
+                0x08000d98                I2C1_ER_IRQHandler
+                0x08000d98                USBWakeUp_IRQHandler
  *(.rodata)
  *(.rodata*)
  .rodata.main.str1.1
-                0x08000c82       0x21 build/main.o
-                                 0x1c (size before relaxing)
- *fill*         0x08000ca3        0x1 
- .rodata.led_d  0x08000ca4        0xc build/main.o
- .rodata.led_c  0x08000cb0        0xc build/main.o
- .rodata.led_b  0x08000cbc        0xc build/main.o
- .rodata.led_a  0x08000cc8        0xc build/main.o
+                0x08000d9a       0x1a build/main.o
+                                 0x15 (size before relaxing)
+ .rodata.led_c  0x08000db4        0xc build/main.o
+ .rodata.led_b  0x08000dc0        0xc build/main.o
+ .rodata.led_a  0x08000dcc        0xc build/main.o
  .rodata.vTaskStartScheduler.str1.1
-                0x08000cd4        0x5 build/tasks.o
+                0x08000dd8        0x5 build/tasks.o
  .rodata.uxTopUsedPriority
-                0x08000cd4        0x4 build/tasks.o
-                0x08000cdc                        . = ALIGN (0x4)
+                0x08000dd8        0x4 build/tasks.o
+                0x08000de0                        . = ALIGN (0x4)
 
-.glue_7         0x08000cd8        0x0
- .glue_7        0x08000cd8        0x0 linker stubs
+.glue_7         0x08000ddc        0x0
+ .glue_7        0x08000ddc        0x0 linker stubs
 
-.glue_7t        0x08000cd8        0x0
- .glue_7t       0x08000cd8        0x0 linker stubs
+.glue_7t        0x08000ddc        0x0
+ .glue_7t       0x08000ddc        0x0 linker stubs
 
-.vfp11_veneer   0x08000cd8        0x0
- .vfp11_veneer  0x08000cd8        0x0 linker stubs
+.vfp11_veneer   0x08000ddc        0x0
+ .vfp11_veneer  0x08000ddc        0x0 linker stubs
 
-.v4_bx          0x08000cd8        0x0
- .v4_bx         0x08000cd8        0x0 linker stubs
+.v4_bx          0x08000ddc        0x0
+ .v4_bx         0x08000ddc        0x0 linker stubs
 
-.iplt           0x08000cd8        0x0
- .iplt          0x08000cd8        0x0 build/main.o
+.iplt           0x08000ddc        0x0
+ .iplt          0x08000ddc        0x0 build/main.o
 
-.rel.dyn        0x08000cd8        0x0
- .rel.iplt      0x08000cd8        0x0 build/main.o
+.rel.dyn        0x08000ddc        0x0
+ .rel.iplt      0x08000ddc        0x0 build/main.o
 
-.data           0x20000000        0x4 load address 0x08000cd8
+.data           0x20000000        0x4 load address 0x08000ddc
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -715,110 +714,108 @@ END GROUP
                 0x20000000        0x4 build/port.o
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        _edata = .
-                0x08000cd8                        _sidata = LOADADDR (.data)
+                0x08000ddc                        _sidata = LOADADDR (.data)
 
-.igot.plt       0x20000004        0x0 load address 0x08000cdc
+.igot.plt       0x20000004        0x0 load address 0x08000de0
  .igot.plt      0x20000004        0x0 build/main.o
 
-.bss            0x20000004     0x1124 load address 0x08000cdc
+.bss            0x20000004     0x1120 load address 0x08000de0
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        _sbss = .
  *(.bss)
  *(.bss*)
- .bss.g_msticks
-                0x20000004        0x4 build/main.o
  .bss.uxSchedulerSuspended
-                0x20000008        0x4 build/tasks.o
+                0x20000004        0x4 build/tasks.o
  .bss.xIdleTaskHandles
-                0x2000000c        0x4 build/tasks.o
+                0x20000008        0x4 build/tasks.o
  .bss.xNextTaskUnblockTime
-                0x20000010        0x4 build/tasks.o
+                0x2000000c        0x4 build/tasks.o
  .bss.uxTaskNumber
-                0x20000014        0x4 build/tasks.o
+                0x20000010        0x4 build/tasks.o
  .bss.xNumOfOverflows
-                0x20000018        0x4 build/tasks.o
+                0x20000014        0x4 build/tasks.o
  .bss.xYieldPendings
-                0x2000001c        0x4 build/tasks.o
+                0x20000018        0x4 build/tasks.o
  .bss.xPendedTicks
-                0x20000020        0x4 build/tasks.o
+                0x2000001c        0x4 build/tasks.o
  .bss.xSchedulerRunning
-                0x20000024        0x4 build/tasks.o
+                0x20000020        0x4 build/tasks.o
  .bss.uxTopReadyPriority
-                0x20000028        0x4 build/tasks.o
+                0x20000024        0x4 build/tasks.o
  .bss.xTickCount
-                0x2000002c        0x4 build/tasks.o
+                0x20000028        0x4 build/tasks.o
  .bss.uxCurrentNumberOfTasks
-                0x20000030        0x4 build/tasks.o
+                0x2000002c        0x4 build/tasks.o
  .bss.xSuspendedTaskList
-                0x20000034       0x14 build/tasks.o
+                0x20000030       0x14 build/tasks.o
  .bss.uxDeletedTasksWaitingCleanUp
-                0x20000048        0x4 build/tasks.o
+                0x20000044        0x4 build/tasks.o
  .bss.xTasksWaitingTermination
-                0x2000004c       0x14 build/tasks.o
+                0x20000048       0x14 build/tasks.o
  .bss.xPendingReadyList
-                0x20000060       0x14 build/tasks.o
+                0x2000005c       0x14 build/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x20000074        0x4 build/tasks.o
+                0x20000070        0x4 build/tasks.o
  .bss.pxDelayedTaskList
-                0x20000078        0x4 build/tasks.o
+                0x20000074        0x4 build/tasks.o
  .bss.xDelayedTaskList2
-                0x2000007c       0x14 build/tasks.o
+                0x20000078       0x14 build/tasks.o
  .bss.xDelayedTaskList1
-                0x20000090       0x14 build/tasks.o
+                0x2000008c       0x14 build/tasks.o
  .bss.pxReadyTasksLists
-                0x200000a4       0x64 build/tasks.o
+                0x200000a0       0x64 build/tasks.o
  .bss.pxCurrentTCB
-                0x20000108        0x4 build/tasks.o
-                0x20000108                pxCurrentTCB
+                0x20000104        0x4 build/tasks.o
+                0x20000104                pxCurrentTCB
  .bss.xNumberOfSuccessfulFrees
-                0x2000010c        0x4 build/heap_4.o
+                0x20000108        0x4 build/heap_4.o
  .bss.xNumberOfSuccessfulAllocations
-                0x20000110        0x4 build/heap_4.o
+                0x2000010c        0x4 build/heap_4.o
  .bss.xMinimumEverFreeBytesRemaining
-                0x20000114        0x4 build/heap_4.o
+                0x20000110        0x4 build/heap_4.o
  .bss.xFreeBytesRemaining
-                0x20000118        0x4 build/heap_4.o
- .bss.pxEnd     0x2000011c        0x4 build/heap_4.o
- .bss.xStart    0x20000120        0x8 build/heap_4.o
- .bss.ucHeap    0x20000128     0x1000 build/heap_4.o
+                0x20000114        0x4 build/heap_4.o
+ .bss.pxEnd     0x20000118        0x4 build/heap_4.o
+ .bss.xStart    0x2000011c        0x8 build/heap_4.o
+ .bss.ucHeap    0x20000124     0x1000 build/heap_4.o
  *(COMMON)
-                0x20001128                        . = ALIGN (0x4)
-                0x20001128                        _ebss = .
-OUTPUT(build/three-thread-blink.elf elf32-littlearm)
+                0x20001124                        . = ALIGN (0x4)
+                0x20001124                        _ebss = .
+OUTPUT(build/three-thread-blink_hse.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000     0x3a9c
- .debug_info    0x00000000      0x639 build/main.o
- .debug_info    0x00000639     0x2710 build/tasks.o
- .debug_info    0x00002d49      0x2b2 build/list.o
- .debug_info    0x00002ffb      0x35e build/port.o
- .debug_info    0x00003359      0x5eb build/heap_4.o
- .debug_info    0x00003944       0x23 build/startup_stm32f103.o
- .debug_info    0x00003967      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+.debug_info     0x00000000     0x3a45
+ .debug_info    0x00000000      0x5f1 build/main.o
+ .debug_info    0x000005f1     0x2701 build/tasks.o
+ .debug_info    0x00002cf2      0x2b2 build/list.o
+ .debug_info    0x00002fa4      0x35e build/port.o
+ .debug_info    0x00003302      0x5eb build/heap_4.o
+ .debug_info    0x000038ed       0x23 build/startup_stm32f103.o
+ .debug_info    0x00003910      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
-.debug_abbrev   0x00000000      0xe87
- .debug_abbrev  0x00000000      0x26c build/main.o
- .debug_abbrev  0x0000026c      0x507 build/tasks.o
- .debug_abbrev  0x00000773      0x105 build/list.o
- .debug_abbrev  0x00000878      0x261 build/port.o
- .debug_abbrev  0x00000ad9      0x2e5 build/heap_4.o
- .debug_abbrev  0x00000dbe       0x12 build/startup_stm32f103.o
- .debug_abbrev  0x00000dd0       0xb7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+.debug_abbrev   0x00000000      0xe8a
+ .debug_abbrev  0x00000000      0x270 build/main.o
+ .debug_abbrev  0x00000270      0x506 build/tasks.o
+ .debug_abbrev  0x00000776      0x105 build/list.o
+ .debug_abbrev  0x0000087b      0x261 build/port.o
+ .debug_abbrev  0x00000adc      0x2e5 build/heap_4.o
+ .debug_abbrev  0x00000dc1       0x12 build/startup_stm32f103.o
+ .debug_abbrev  0x00000dd3       0xb7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_loclists
-                0x00000000     0x1c45
+                0x00000000     0x1c5f
  .debug_loclists
-                0x00000000       0xd8 build/main.o
+                0x00000000       0xf2 build/main.o
  .debug_loclists
-                0x000000d8     0x155e build/tasks.o
+                0x000000f2     0x155e build/tasks.o
  .debug_loclists
-                0x00001636       0x77 build/list.o
+                0x00001650       0x77 build/list.o
  .debug_loclists
-                0x000016ad       0x82 build/port.o
+                0x000016c7       0x82 build/port.o
  .debug_loclists
-                0x0000172f      0x33f build/heap_4.o
+                0x00001749      0x33f build/heap_4.o
  .debug_loclists
-                0x00001a6e      0x1d7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x00001a88      0x1d7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_aranges  0x00000000      0x310
  .debug_aranges
@@ -837,19 +834,19 @@ LOAD linker stubs
                 0x000002f0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_rnglists
-                0x00000000      0x3db
+                0x00000000      0x3eb
  .debug_rnglists
-                0x00000000       0x41 build/main.o
+                0x00000000       0x51 build/main.o
  .debug_rnglists
-                0x00000041      0x2a9 build/tasks.o
+                0x00000051      0x2a9 build/tasks.o
  .debug_rnglists
-                0x000002ea       0x2b build/list.o
+                0x000002fa       0x2b build/list.o
  .debug_rnglists
-                0x00000315       0x5b build/port.o
+                0x00000325       0x5b build/port.o
  .debug_rnglists
-                0x00000370       0x52 build/heap_4.o
+                0x00000380       0x52 build/heap_4.o
  .debug_rnglists
-                0x000003c2       0x19 build/startup_stm32f103.o
+                0x000003d2       0x19 build/startup_stm32f103.o
 
 .debug_macro    0x00000000     0x3b10
  .debug_macro   0x00000000       0x9f build/main.o
@@ -896,24 +893,24 @@ LOAD linker stubs
  .debug_macro   0x000037ad      0x162 build/port.o
  .debug_macro   0x0000390f      0x201 build/heap_4.o
 
-.debug_line     0x00000000     0x3440
- .debug_line    0x00000000      0x2d7 build/main.o
- .debug_line    0x000002d7     0x1f8b build/tasks.o
- .debug_line    0x00002262      0x45a build/list.o
- .debug_line    0x000026bc      0x3c2 build/port.o
- .debug_line    0x00002a7e      0x79e build/heap_4.o
- .debug_line    0x0000321c       0x73 build/startup_stm32f103.o
- .debug_line    0x0000328f      0x1b1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+.debug_line     0x00000000     0x34b9
+ .debug_line    0x00000000      0x358 build/main.o
+ .debug_line    0x00000358     0x1f83 build/tasks.o
+ .debug_line    0x000022db      0x45a build/list.o
+ .debug_line    0x00002735      0x3c2 build/port.o
+ .debug_line    0x00002af7      0x79e build/heap_4.o
+ .debug_line    0x00003295       0x73 build/startup_stm32f103.o
+ .debug_line    0x00003308      0x1b1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
-.debug_str      0x00000000    0x14ba6
- .debug_str     0x00000000    0x14ba6 build/main.o
-                               0xed0e (size before relaxing)
- .debug_str     0x00014ba6    0x139f4 build/tasks.o
- .debug_str     0x00014ba6    0x1024c build/list.o
- .debug_str     0x00014ba6     0xefee build/port.o
- .debug_str     0x00014ba6    0x11dea build/heap_4.o
- .debug_str     0x00014ba6       0x77 build/startup_stm32f103.o
- .debug_str     0x00014ba6      0x1a5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+.debug_str      0x00000000    0x14bbb
+ .debug_str     0x00000000    0x14bbb build/main.o
+                               0xed39 (size before relaxing)
+ .debug_str     0x00014bbb    0x139f0 build/tasks.o
+ .debug_str     0x00014bbb    0x10248 build/list.o
+ .debug_str     0x00014bbb     0xefea build/port.o
+ .debug_str     0x00014bbb    0x11de6 build/heap_4.o
+ .debug_str     0x00014bbb       0x72 build/startup_stm32f103.o
+ .debug_str     0x00014bbb      0x1a5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .comment        0x00000000       0x26
  .comment       0x00000000       0x26 build/main.o
@@ -950,6 +947,6 @@ LOAD linker stubs
  .debug_frame   0x00000778       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_line_str
-                0x00000000       0x6b
+                0x00000000       0x66
  .debug_line_str
-                0x00000000       0x6b build/startup_stm32f103.o
+                0x00000000       0x66 build/startup_stm32f103.o
