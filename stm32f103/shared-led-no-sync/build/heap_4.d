@@ -1,0 +1,20 @@
+build/heap_4.o: \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/portable/MemMang/heap_4.c \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/FreeRTOS.h \
+ FreeRTOSConfig.h \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/projdefs.h \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/portable.h \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/deprecated_definitions.h \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/portable/GCC/ARM_CM3/portmacro.h \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/mpu_wrappers.h \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/task.h \
+ /home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/list.h
+/home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/FreeRTOS.h:
+FreeRTOSConfig.h:
+/home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/projdefs.h:
+/home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/portable.h:
+/home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/deprecated_definitions.h:
+/home/msis/261100610017/RTOS/stm32f103/FreeRTOS/portable/GCC/ARM_CM3/portmacro.h:
+/home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/mpu_wrappers.h:
+/home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/task.h:
+/home/msis/261100610017/RTOS/stm32f103/FreeRTOS/include/list.h:
