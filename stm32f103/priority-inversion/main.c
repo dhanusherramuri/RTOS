@@ -101,83 +101,130 @@ static void gpio_output_init(GPIO_TypeDef *port, uint32_t pin)
     *cr |=  (GPIO_CNF_MODE_OUTPUT_PP_2MHZ << shift);
 }
 
-/* ------------------------------------------------------------------ */
-/* Task1 - HIGH priority - blinks PA0 - needs the semaphore            */
-/* ------------------------------------------------------------------ */
-static void task1_high(void *pvParameters)
-{
+static void task1_high(void *pvParameters) {
     (void)pvParameters;
-    /* give Task2 a head-start so it can acquire the semaphore first */
-    vTaskDelay(pdMS_TO_TICKS(10));
-
+    
+    // 3. Wakes up last, after Task 2 has successfully taken the semaphore
+    vTaskDelay(pdMS_TO_TICKS(30)); 
+    
     for (;;) {
-        /* --- WAIT for the shared GPIO-A semaphore --- */
         xSemaphoreTake(xGpioABinarySem, portMAX_DELAY);
-
-        /* PA0 on */
-        GPIOA->ODR |=  (1U << 0);
+        GPIOA->ODR |= (1U << 0);   // PA0 ON
         vTaskDelay(pdMS_TO_TICKS(500));
-
-        /* PA0 off */
-        GPIOA->ODR &= ~(1U << 0);
+        GPIOA->ODR &= ~(1U << 0);  // PA0 OFF
         vTaskDelay(pdMS_TO_TICKS(500));
-
         xSemaphoreGive(xGpioABinarySem);
     }
 }
 
-/* ------------------------------------------------------------------ */
-/* Task2 - LOW priority - blinks PA1 - needs the semaphore             */
-/* ------------------------------------------------------------------ */
-static void task2_low(void *pvParameters)
-{
+static void task2_low(void *pvParameters) {
     (void)pvParameters;
+    
+    // 1. Starts immediately at T=0, grabs the semaphore, and turns PA1 ON
     for (;;) {
-        /* Task2 acquires the semaphore first (it starts before Task1
-         * and Task3 because of the 10 ms head-start above).
-         * Once Task3 wakes and busy-waits, Task2 cannot run to give
-         * the semaphore back - trapping Task1. */
         xSemaphoreTake(xGpioABinarySem, portMAX_DELAY);
-
-        /* PA1 on */
-        GPIOA->ODR |=  (1U << 1);
+        GPIOA->ODR |= (1U << 1);   // PA1 ON
         vTaskDelay(pdMS_TO_TICKS(500));
-
-        /* PA1 off */
-        GPIOA->ODR &= ~(1U << 1);
+        GPIOA->ODR &= ~(1U << 1);  // PA1 OFF
         vTaskDelay(pdMS_TO_TICKS(500));
-
         xSemaphoreGive(xGpioABinarySem);
     }
 }
 
-/* ------------------------------------------------------------------ */
-/* Task3 - MED priority - blinks PC13 - no semaphore                   */
-/* Busy-waits 500 ms x 5 cycles (5 s total) then sleeps 500 ms once.  */
-/* The busy-wait is what blocks Task2 from running and releasing the   */
-/* semaphore that Task1 is waiting on.                                 */
-/* ------------------------------------------------------------------ */
-static void task3_med(void *pvParameters)
-{
+static void task3_med(void *pvParameters) {
     (void)pvParameters;
+    
+    // 2. Wakes up after Task 2 is already asleep holding the lock
+    vTaskDelay(pdMS_TO_TICKS(10)); 
+    
     for (;;) {
-        /* --- 5 busy-wait cycles of 500 ms each -------------------- */
         for (uint32_t i = 0; i < 5; i++) {
-            /* PC13 toggle (active-low, so XOR gives a visible blink) */
-            GPIOA->ODR ^= (1U << 2);
-
-            /* BUSY-WAIT: does NOT yield the CPU - this is the key.
-             * While spinning here, Task2 (which holds the semaphore)
-             * cannot run because Task3 (MED) outranks Task2 (LOW).
-             * Task1 (HIGH) is blocked on the semaphore.
-             * => MED is blocking HIGH through LOW: inversion. */
+            GPIOA->ODR ^= (1U << 2); // PA2 Toggle
             busy_wait_ms(500);
         }
-
-        /* --- one cooperative sleep to eventually let things flow --- */
-        vTaskDelay(pdMS_TO_TICKS(500));
+        // Give a 1-second rest to let the inversion clear out before looping
+        vTaskDelay(pdMS_TO_TICKS(1000)); 
     }
 }
+
+
+// /* ------------------------------------------------------------------ */
+// /* Task1 - HIGH priority - blinks PA0 - needs the semaphore            */
+// /* ------------------------------------------------------------------ */
+// static void task1_high(void *pvParameters)
+// {
+//     (void)pvParameters;
+//     /* give Task2 a head-start so it can acquire the semaphore first */
+//     vTaskDelay(pdMS_TO_TICKS(10));
+
+//     for (;;) {
+//         /* --- WAIT for the shared GPIO-A semaphore --- */
+//         xSemaphoreTake(xGpioABinarySem, portMAX_DELAY);
+
+//         /* PA0 on */
+//         GPIOA->ODR |=  (1U << 0);
+//         vTaskDelay(pdMS_TO_TICKS(500));
+
+//         /* PA0 off */
+//         GPIOA->ODR &= ~(1U << 0);
+//         vTaskDelay(pdMS_TO_TICKS(500));
+
+//         xSemaphoreGive(xGpioABinarySem);
+//     }
+// }
+
+// /* ------------------------------------------------------------------ */
+// /* Task2 - LOW priority - blinks PA1 - needs the semaphore             */
+// /* ------------------------------------------------------------------ */
+// static void task2_low(void *pvParameters)
+// {
+//     (void)pvParameters;
+//     for (;;) {
+//         /* Task2 acquires the semaphore first (it starts before Task1
+//          * and Task3 because of the 10 ms head-start above).
+//          * Once Task3 wakes and busy-waits, Task2 cannot run to give
+//          * the semaphore back - trapping Task1. */
+//         xSemaphoreTake(xGpioABinarySem, portMAX_DELAY);
+
+//         /* PA1 on */
+//         GPIOA->ODR |=  (1U << 1);
+//         vTaskDelay(pdMS_TO_TICKS(500));
+
+//         /* PA1 off */
+//         GPIOA->ODR &= ~(1U << 1);
+//         vTaskDelay(pdMS_TO_TICKS(500));
+
+//         xSemaphoreGive(xGpioABinarySem);
+//     }
+// }
+
+// /* ------------------------------------------------------------------ */
+// /* Task3 - MED priority - blinks PC13 - no semaphore                   */
+// /* Busy-waits 500 ms x 5 cycles (5 s total) then sleeps 500 ms once.  */
+// /* The busy-wait is what blocks Task2 from running and releasing the   */
+// /* semaphore that Task1 is waiting on.                                 */
+// /* ------------------------------------------------------------------ */
+// static void task3_med(void *pvParameters)
+// {
+//     (void)pvParameters;
+//     for (;;) {
+//         /* --- 5 busy-wait cycles of 500 ms each -------------------- */
+//         for (uint32_t i = 0; i < 5; i++) {
+//             /* PC13 toggle (active-low, so XOR gives a visible blink) */
+//             GPIOA->ODR ^= (1U << 2);
+
+//             /* BUSY-WAIT: does NOT yield the CPU - this is the key.
+//              * While spinning here, Task2 (which holds the semaphore)
+//              * cannot run because Task3 (MED) outranks Task2 (LOW).
+//              * Task1 (HIGH) is blocked on the semaphore.
+//              * => MED is blocking HIGH through LOW: inversion. */
+//             busy_wait_ms(500);
+//         }
+
+//         /* --- one cooperative sleep to eventually let things flow --- */
+//         vTaskDelay(pdMS_TO_TICKS(500));
+//     }
+// }
 
 /* ------------------------------------------------------------------ */
 /* main                                                                 */
@@ -189,7 +236,7 @@ int main(void)
 
     gpio_output_init(GPIOA, 0);   /* PA0 - Task1 LED */
     gpio_output_init(GPIOA, 1);   /* PA1 - Task2 LED */
-    gpio_output_init(GPIOA, 2);  /* PC13 - Task3 onboard LED */
+    gpio_output_init(GPIOA, 2);  /* PA2 - Task3 LED */
 
     /* BINARY semaphore - deliberately not a mutex */
     xGpioABinarySem = xSemaphoreCreateBinary();

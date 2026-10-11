@@ -23,7 +23,7 @@ typedef struct {
     uint32_t      period_ms;
 } led_task_args_t;
 
-static const led_task_args_t led_a = { GPIOC, 13, 1000 };
+static const led_task_args_t led_a = { GPIOA, 2, 1000 };
 static const led_task_args_t led_b = { GPIOA, 0,  2000 };
 static const led_task_args_t led_c = { GPIOA, 1,  3000 };
 

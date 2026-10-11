@@ -23,18 +23,18 @@ Linker script and memory map
 LOAD build/main.o
 LOAD build/startup_stm32f103.o
 START GROUP
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7-m/nofp/libgcc.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
 END GROUP
 START GROUP
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7-m/nofp/libgcc.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
 END GROUP
 START GROUP
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7-m/nofp/libgcc.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
 END GROUP
                 0x20005000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
 
@@ -191,14 +191,15 @@ LOAD linker stubs
  .debug_macro   0x00000ae3      0x34e build/main.o
  .debug_macro   0x00000e31       0xd0 build/main.o
 
-.debug_line     0x00000000      0x1a9
- .debug_line    0x00000000      0x136 build/main.o
- .debug_line    0x00000136       0x73 build/startup_stm32f103.o
+.debug_line     0x00000000      0x1b4
+ .debug_line    0x00000000      0x141 build/main.o
+ .debug_line    0x00000141       0x73 build/startup_stm32f103.o
 
-.debug_str      0x00000000     0x3bd8
- .debug_str     0x00000000     0x3bd8 build/main.o
-                               0x3cfa (size before relaxing)
- .debug_str     0x00003bd8       0x65 build/startup_stm32f103.o
+.debug_str      0x00000000     0x3bf1
+ .debug_str     0x00000000     0x3bf1 build/main.o
+                               0x3d05 (size before relaxing)
+ .debug_str     0x00003bf1        0x0 build/startup_stm32f103.o
+                                 0x7e (size before relaxing)
 
 .comment        0x00000000       0x26
  .comment       0x00000000       0x26 build/main.o
@@ -215,6 +216,6 @@ LOAD linker stubs
  .debug_frame   0x00000000       0x30 build/main.o
 
 .debug_line_str
-                0x00000000       0x59
+                0x00000000       0x6f
  .debug_line_str
-                0x00000000       0x59 build/startup_stm32f103.o
+                0x00000000       0x6f build/startup_stm32f103.o
