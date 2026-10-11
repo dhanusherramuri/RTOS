@@ -49,9 +49,9 @@ static void task2_toggle_2hz(void *pvParameters)
 {
     (void)pvParameters;
     for (;;) {
-        GPIOA->ODR ^= (1U << 0);           /* on */
+        GPIOA->ODR ^= (1U << 1);           /* on */
         vTaskDelay(pdMS_TO_TICKS(500));
-        GPIOA->ODR ^= (1U << 0);           /* off */
+        GPIOA->ODR ^= (1U << 1);           /* off */
         vTaskDelay(pdMS_TO_TICKS(500));
         /* one full loop iteration = one complete blink, 1000 ms total */
     }
@@ -61,10 +61,10 @@ int main(void)
 {
     RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
     gpio_output_init(GPIOA, 1);
-    gpio_output_init(GPIOA, 0);
+    // gpio_output_init(GPIOA, 1);
 
     xTaskCreate(task1_toggle_1hz, "task1", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
-    xTaskCreate(task2_toggle_2hz, "task2", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
+    // xTaskCreate(task2_toggle_2hz, "task2", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
 
     vTaskStartScheduler();
 

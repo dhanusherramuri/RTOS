@@ -1,9 +1,9 @@
 Archive member included to satisfy reference by file (symbol)
 
-/usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
-                              build/tasks.o (memset)
-/usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+/usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
                               build/queue.o (memcpy)
+/usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                              build/tasks.o (memset)
 
 Discarded input sections
 
@@ -71,7 +71,7 @@ Discarded input sections
  .text.vTaskResume
                 0x00000000       0x88 build/tasks.o
  .text.xTaskResumeFromISR
-                0x00000000       0xa0 build/tasks.o
+                0x00000000       0xa4 build/tasks.o
  .text.vTaskEndScheduler
                 0x00000000       0x34 build/tasks.o
  .text.xTaskGetTickCount
@@ -192,7 +192,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x11c build/list.o
  .debug_macro   0x00000000       0x9b build/list.o
  .debug_macro   0x00000000       0x57 build/list.o
- .debug_macro   0x00000000      0x370 build/list.o
+ .debug_macro   0x00000000      0x364 build/list.o
  .debug_macro   0x00000000       0x16 build/list.o
  .debug_macro   0x00000000       0x4a build/list.o
  .debug_macro   0x00000000       0x34 build/list.o
@@ -255,7 +255,7 @@ Discarded input sections
  .text.prvCopyDataToQueue
                 0x00000000       0x66 build/queue.o
  .text.prvCopyDataFromQueue
-                0x00000000       0x28 build/queue.o
+                0x00000000       0x26 build/queue.o
  .text.prvUnlockQueue
                 0x00000000       0x6c build/queue.o
  .text.xQueueGenericReset
@@ -299,7 +299,7 @@ Discarded input sections
  .debug_info    0x00000000     0x1a64 build/queue.o
  .debug_abbrev  0x00000000      0x3c5 build/queue.o
  .debug_loclists
-                0x00000000      0xc3d build/queue.o
+                0x00000000      0xc2f build/queue.o
  .debug_aranges
                 0x00000000       0xd0 build/queue.o
  .debug_rnglists
@@ -316,7 +316,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x11c build/queue.o
  .debug_macro   0x00000000       0x9b build/queue.o
  .debug_macro   0x00000000       0x57 build/queue.o
- .debug_macro   0x00000000      0x370 build/queue.o
+ .debug_macro   0x00000000      0x364 build/queue.o
  .debug_macro   0x00000000       0x16 build/queue.o
  .debug_macro   0x00000000       0x4a build/queue.o
  .debug_macro   0x00000000       0x34 build/queue.o
@@ -340,8 +340,8 @@ Discarded input sections
  .debug_macro   0x00000000       0xc3 build/queue.o
  .debug_macro   0x00000000      0x161 build/queue.o
  .debug_macro   0x00000000       0x80 build/queue.o
- .debug_line    0x00000000     0x11e6 build/queue.o
- .debug_str     0x00000000    0x1299c build/queue.o
+ .debug_line    0x00000000     0x1207 build/queue.o
+ .debug_str     0x00000000    0x12986 build/queue.o
  .comment       0x00000000       0x27 build/queue.o
  .debug_frame   0x00000000      0x288 build/queue.o
  .ARM.attributes
@@ -441,7 +441,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x11c build/heap_4.o
  .debug_macro   0x00000000       0x9b build/heap_4.o
  .debug_macro   0x00000000       0x57 build/heap_4.o
- .debug_macro   0x00000000      0x370 build/heap_4.o
+ .debug_macro   0x00000000      0x364 build/heap_4.o
  .debug_macro   0x00000000       0x16 build/heap_4.o
  .debug_macro   0x00000000       0x4a build/heap_4.o
  .debug_macro   0x00000000       0x34 build/heap_4.o
@@ -467,24 +467,24 @@ Discarded input sections
  .text          0x00000000        0x0 build/startup_stm32f103.o
  .data          0x00000000        0x0 build/startup_stm32f103.o
  .bss           0x00000000        0x0 build/startup_stm32f103.o
- .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
- .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
- .text          0x00000000       0xec /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .ARM.extab     0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .ARM.exidx     0x00000000        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .debug_line    0x00000000       0xbd /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .text          0x00000000       0xec /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .ARM.extab     0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .ARM.exidx     0x00000000        0x8 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .debug_line    0x00000000       0xbd /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
  .debug_line_str
-                0x00000000       0x95 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .debug_info    0x00000000       0x33 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .debug_abbrev  0x00000000       0x28 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+                0x00000000       0x95 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .debug_info    0x00000000       0x33 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .debug_abbrev  0x00000000       0x28 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
  .debug_aranges
-                0x00000000       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .debug_str     0x00000000       0xa8 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
- .eh_frame      0x00000000       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+                0x00000000       0x20 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .debug_str     0x00000000       0xab /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .debug_frame   0x00000000       0x28 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
  .ARM.attributes
-                0x00000000       0x1b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+                0x00000000       0x1b /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy.o)
+ .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+ .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 Memory Configuration
 
@@ -503,18 +503,18 @@ LOAD build/port.o
 LOAD build/heap_4.o
 LOAD build/startup_stm32f103.o
 START GROUP
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7-m/nofp/libgcc.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
 END GROUP
 START GROUP
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7-m/nofp/libgcc.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
 END GROUP
 START GROUP
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7-m/nofp/libgcc.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
-LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
 END GROUP
                 0x20005000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
 
@@ -525,17 +525,17 @@ END GROUP
                 0x08000000                g_pfnVectorTable
                 0x080000ec                        . = ALIGN (0x4)
 
-.text           0x080000ec      0xcf0
+.text           0x080000ec      0xce8
                 0x080000ec                        . = ALIGN (0x4)
  *(.text)
- .text          0x080000ec       0xa0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+ .text          0x080000ec       0x9c /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
                 0x080000ec                memset
  *(.text*)
  .text.led_task
-                0x0800018c       0x1c build/main.o
+                0x08000188       0x1c build/main.o
  .text.startup.main
-                0x080001a8      0x110 build/main.o
-                0x080001a8                main
+                0x080001a4      0x114 build/main.o
+                0x080001a4                main
  .text.vApplicationStackOverflowHook
                 0x080002b8        0x2 build/main.o
                 0x080002b8                vApplicationStackOverflowHook
@@ -571,141 +571,142 @@ END GROUP
                 0x08000914                vTaskDelay
  *fill*         0x08000942        0x2 
  .text.vTaskSwitchContext
-                0x08000944       0x9c build/tasks.o
+                0x08000944       0x94 build/tasks.o
                 0x08000944                vTaskSwitchContext
  .text.vListInitialise
-                0x080009e0       0x16 build/list.o
-                0x080009e0                vListInitialise
+                0x080009d8       0x16 build/list.o
+                0x080009d8                vListInitialise
  .text.vListInitialiseItem
-                0x080009f6        0x6 build/list.o
-                0x080009f6                vListInitialiseItem
+                0x080009ee        0x6 build/list.o
+                0x080009ee                vListInitialiseItem
  .text.vListInsert
-                0x080009fc       0x2e build/list.o
-                0x080009fc                vListInsert
+                0x080009f4       0x2e build/list.o
+                0x080009f4                vListInsert
  .text.uxListRemove
-                0x08000a2a       0x1e build/list.o
-                0x08000a2a                uxListRemove
+                0x08000a22       0x1e build/list.o
+                0x08000a22                uxListRemove
  .text.prvTaskExitError
-                0x08000a48       0x20 build/port.o
+                0x08000a40       0x20 build/port.o
  .text.prvPortStartFirstTask
-                0x08000a68       0x20 build/port.o
+                0x08000a60       0x20 build/port.o
  .text.pxPortInitialiseStack
-                0x08000a88       0x24 build/port.o
-                0x08000a88                pxPortInitialiseStack
+                0x08000a80       0x24 build/port.o
+                0x08000a80                pxPortInitialiseStack
  .text.SVC_Handler
-                0x08000aac       0x24 build/port.o
-                0x08000aac                SVC_Handler
+                0x08000aa4       0x24 build/port.o
+                0x08000aa4                SVC_Handler
  .text.vPortEnterCritical
-                0x08000ad0       0x20 build/port.o
-                0x08000ad0                vPortEnterCritical
+                0x08000ac8       0x20 build/port.o
+                0x08000ac8                vPortEnterCritical
  .text.vPortExitCritical
-                0x08000af0       0x14 build/port.o
-                0x08000af0                vPortExitCritical
+                0x08000ae8       0x14 build/port.o
+                0x08000ae8                vPortExitCritical
  .text.PendSV_Handler
-                0x08000b04       0x44 build/port.o
-                0x08000b04                PendSV_Handler
+                0x08000afc       0x44 build/port.o
+                0x08000afc                PendSV_Handler
  .text.SysTick_Handler
-                0x08000b48       0x2c build/port.o
-                0x08000b48                SysTick_Handler
+                0x08000b40       0x2c build/port.o
+                0x08000b40                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x08000b74       0x18 build/port.o
-                0x08000b74                vPortSetupTimerInterrupt
+                0x08000b6c       0x18 build/port.o
+                0x08000b6c                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x08000b8c       0x40 build/port.o
-                0x08000b8c                xPortStartScheduler
+                0x08000b84       0x40 build/port.o
+                0x08000b84                xPortStartScheduler
  .text.pvPortMalloc
-                0x08000bcc       0xf8 build/heap_4.o
-                0x08000bcc                pvPortMalloc
+                0x08000bc4       0xf8 build/heap_4.o
+                0x08000bc4                pvPortMalloc
  .text.vPortFree
-                0x08000cc4       0x94 build/heap_4.o
-                0x08000cc4                vPortFree
+                0x08000cbc       0x94 build/heap_4.o
+                0x08000cbc                vPortFree
  .text.Reset_Handler
-                0x08000d58       0x40 build/startup_stm32f103.o
-                0x08000d58                Reset_Handler
+                0x08000d50       0x40 build/startup_stm32f103.o
+                0x08000d50                Reset_Handler
  .text.Default_Handler
-                0x08000d98        0x2 build/startup_stm32f103.o
-                0x08000d98                EXTI2_IRQHandler
-                0x08000d98                DebugMon_Handler
-                0x08000d98                TIM1_CC_IRQHandler
-                0x08000d98                HardFault_Handler
-                0x08000d98                PVD_IRQHandler
-                0x08000d98                NMI_Handler
-                0x08000d98                EXTI3_IRQHandler
-                0x08000d98                EXTI0_IRQHandler
-                0x08000d98                I2C2_EV_IRQHandler
-                0x08000d98                UsageFault_Handler
-                0x08000d98                ADC1_2_IRQHandler
-                0x08000d98                SPI1_IRQHandler
-                0x08000d98                TAMPER_IRQHandler
-                0x08000d98                DMA1_Channel4_IRQHandler
-                0x08000d98                USART3_IRQHandler
-                0x08000d98                RTC_IRQHandler
-                0x08000d98                DMA1_Channel7_IRQHandler
-                0x08000d98                CAN1_RX1_IRQHandler
-                0x08000d98                TIM4_IRQHandler
-                0x08000d98                I2C1_EV_IRQHandler
-                0x08000d98                DMA1_Channel6_IRQHandler
-                0x08000d98                TIM3_IRQHandler
-                0x08000d98                RCC_IRQHandler
-                0x08000d98                TIM1_TRG_COM_IRQHandler
-                0x08000d98                DMA1_Channel1_IRQHandler
-                0x08000d98                EXTI15_10_IRQHandler
-                0x08000d98                EXTI9_5_IRQHandler
-                0x08000d98                SPI2_IRQHandler
-                0x08000d98                MemManage_Handler
-                0x08000d98                DMA1_Channel5_IRQHandler
-                0x08000d98                EXTI4_IRQHandler
-                0x08000d98                USB_LP_CAN1_RX0_IRQHandler
-                0x08000d98                USB_HP_CAN1_TX_IRQHandler
-                0x08000d98                DMA1_Channel3_IRQHandler
-                0x08000d98                TIM1_UP_IRQHandler
-                0x08000d98                WWDG_IRQHandler
-                0x08000d98                TIM2_IRQHandler
-                0x08000d98                TIM1_BRK_IRQHandler
-                0x08000d98                EXTI1_IRQHandler
-                0x08000d98                RTCAlarm_IRQHandler
-                0x08000d98                USART2_IRQHandler
-                0x08000d98                I2C2_ER_IRQHandler
-                0x08000d98                DMA1_Channel2_IRQHandler
-                0x08000d98                CAN1_SCE_IRQHandler
-                0x08000d98                FLASH_IRQHandler
-                0x08000d98                BusFault_Handler
-                0x08000d98                USART1_IRQHandler
-                0x08000d98                I2C1_ER_IRQHandler
-                0x08000d98                USBWakeUp_IRQHandler
+                0x08000d90        0x2 build/startup_stm32f103.o
+                0x08000d90                EXTI2_IRQHandler
+                0x08000d90                DebugMon_Handler
+                0x08000d90                TIM1_CC_IRQHandler
+                0x08000d90                HardFault_Handler
+                0x08000d90                PVD_IRQHandler
+                0x08000d90                NMI_Handler
+                0x08000d90                EXTI3_IRQHandler
+                0x08000d90                EXTI0_IRQHandler
+                0x08000d90                I2C2_EV_IRQHandler
+                0x08000d90                UsageFault_Handler
+                0x08000d90                ADC1_2_IRQHandler
+                0x08000d90                SPI1_IRQHandler
+                0x08000d90                TAMPER_IRQHandler
+                0x08000d90                DMA1_Channel4_IRQHandler
+                0x08000d90                USART3_IRQHandler
+                0x08000d90                RTC_IRQHandler
+                0x08000d90                DMA1_Channel7_IRQHandler
+                0x08000d90                CAN1_RX1_IRQHandler
+                0x08000d90                TIM4_IRQHandler
+                0x08000d90                I2C1_EV_IRQHandler
+                0x08000d90                DMA1_Channel6_IRQHandler
+                0x08000d90                TIM3_IRQHandler
+                0x08000d90                RCC_IRQHandler
+                0x08000d90                TIM1_TRG_COM_IRQHandler
+                0x08000d90                DMA1_Channel1_IRQHandler
+                0x08000d90                EXTI15_10_IRQHandler
+                0x08000d90                EXTI9_5_IRQHandler
+                0x08000d90                SPI2_IRQHandler
+                0x08000d90                MemManage_Handler
+                0x08000d90                DMA1_Channel5_IRQHandler
+                0x08000d90                EXTI4_IRQHandler
+                0x08000d90                USB_LP_CAN1_RX0_IRQHandler
+                0x08000d90                USB_HP_CAN1_TX_IRQHandler
+                0x08000d90                DMA1_Channel3_IRQHandler
+                0x08000d90                TIM1_UP_IRQHandler
+                0x08000d90                WWDG_IRQHandler
+                0x08000d90                TIM2_IRQHandler
+                0x08000d90                TIM1_BRK_IRQHandler
+                0x08000d90                EXTI1_IRQHandler
+                0x08000d90                RTCAlarm_IRQHandler
+                0x08000d90                USART2_IRQHandler
+                0x08000d90                I2C2_ER_IRQHandler
+                0x08000d90                DMA1_Channel2_IRQHandler
+                0x08000d90                CAN1_SCE_IRQHandler
+                0x08000d90                FLASH_IRQHandler
+                0x08000d90                BusFault_Handler
+                0x08000d90                USART1_IRQHandler
+                0x08000d90                I2C1_ER_IRQHandler
+                0x08000d90                USBWakeUp_IRQHandler
  *(.rodata)
  *(.rodata*)
  .rodata.main.str1.1
-                0x08000d9a       0x1a build/main.o
+                0x08000d92       0x1a build/main.o
                                  0x15 (size before relaxing)
- .rodata.led_c  0x08000db4        0xc build/main.o
- .rodata.led_b  0x08000dc0        0xc build/main.o
- .rodata.led_a  0x08000dcc        0xc build/main.o
+ .rodata.led_c  0x08000dac        0xc build/main.o
+ .rodata.led_b  0x08000db8        0xc build/main.o
+ .rodata.led_a  0x08000dc4        0xc build/main.o
  .rodata.vTaskStartScheduler.str1.1
-                0x08000dd8        0x5 build/tasks.o
+                0x08000dd0        0x0 build/tasks.o
+                                  0x5 (size before relaxing)
  .rodata.uxTopUsedPriority
-                0x08000dd8        0x4 build/tasks.o
-                0x08000de0                        . = ALIGN (0x4)
+                0x08000dd0        0x4 build/tasks.o
+                0x08000dd4                        . = ALIGN (0x4)
 
-.glue_7         0x08000ddc        0x0
- .glue_7        0x08000ddc        0x0 linker stubs
+.glue_7         0x08000dd4        0x0
+ .glue_7        0x08000dd4        0x0 linker stubs
 
-.glue_7t        0x08000ddc        0x0
- .glue_7t       0x08000ddc        0x0 linker stubs
+.glue_7t        0x08000dd4        0x0
+ .glue_7t       0x08000dd4        0x0 linker stubs
 
-.vfp11_veneer   0x08000ddc        0x0
- .vfp11_veneer  0x08000ddc        0x0 linker stubs
+.vfp11_veneer   0x08000dd4        0x0
+ .vfp11_veneer  0x08000dd4        0x0 linker stubs
 
-.v4_bx          0x08000ddc        0x0
- .v4_bx         0x08000ddc        0x0 linker stubs
+.v4_bx          0x08000dd4        0x0
+ .v4_bx         0x08000dd4        0x0 linker stubs
 
-.iplt           0x08000ddc        0x0
- .iplt          0x08000ddc        0x0 build/main.o
+.iplt           0x08000dd4        0x0
+ .iplt          0x08000dd4        0x0 build/main.o
 
-.rel.dyn        0x08000ddc        0x0
- .rel.iplt      0x08000ddc        0x0 build/main.o
+.rel.dyn        0x08000dd4        0x0
+ .rel.iplt      0x08000dd4        0x0 build/main.o
 
-.data           0x20000000        0x4 load address 0x08000ddc
+.data           0x20000000        0x4 load address 0x08000dd4
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -714,12 +715,12 @@ END GROUP
                 0x20000000        0x4 build/port.o
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        _edata = .
-                0x08000ddc                        _sidata = LOADADDR (.data)
+                0x08000dd4                        _sidata = LOADADDR (.data)
 
-.igot.plt       0x20000004        0x0 load address 0x08000de0
+.igot.plt       0x20000004        0x0 load address 0x08000dd8
  .igot.plt      0x20000004        0x0 build/main.o
 
-.bss            0x20000004     0x1120 load address 0x08000de0
+.bss            0x20000004     0x1120 load address 0x08000dd8
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        _sbss = .
  *(.bss)
@@ -791,7 +792,7 @@ LOAD linker stubs
  .debug_info    0x00002fa4      0x35e build/port.o
  .debug_info    0x00003302      0x5eb build/heap_4.o
  .debug_info    0x000038ed       0x23 build/startup_stm32f103.o
- .debug_info    0x00003910      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+ .debug_info    0x00003910      0x135 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_abbrev   0x00000000      0xe8a
  .debug_abbrev  0x00000000      0x270 build/main.o
@@ -800,22 +801,22 @@ LOAD linker stubs
  .debug_abbrev  0x0000087b      0x261 build/port.o
  .debug_abbrev  0x00000adc      0x2e5 build/heap_4.o
  .debug_abbrev  0x00000dc1       0x12 build/startup_stm32f103.o
- .debug_abbrev  0x00000dd3       0xb7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+ .debug_abbrev  0x00000dd3       0xb7 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_loclists
-                0x00000000     0x1c5f
+                0x00000000     0x1c7d
  .debug_loclists
                 0x00000000       0xf2 build/main.o
  .debug_loclists
-                0x000000f2     0x155e build/tasks.o
+                0x000000f2     0x15cd build/tasks.o
  .debug_loclists
-                0x00001650       0x77 build/list.o
+                0x000016bf       0x77 build/list.o
  .debug_loclists
-                0x000016c7       0x82 build/port.o
+                0x00001736       0x82 build/port.o
  .debug_loclists
-                0x00001749      0x33f build/heap_4.o
+                0x000017b8      0x346 build/heap_4.o
  .debug_loclists
-                0x00001a88      0x1d7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x00001afe      0x17f /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_aranges  0x00000000      0x310
  .debug_aranges
@@ -831,7 +832,7 @@ LOAD linker stubs
  .debug_aranges
                 0x000002c8       0x28 build/startup_stm32f103.o
  .debug_aranges
-                0x000002f0       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x000002f0       0x20 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_rnglists
                 0x00000000      0x3eb
@@ -848,7 +849,7 @@ LOAD linker stubs
  .debug_rnglists
                 0x000003d2       0x19 build/startup_stm32f103.o
 
-.debug_macro    0x00000000     0x3b10
+.debug_macro    0x00000000     0x3b04
  .debug_macro   0x00000000       0x9f build/main.o
  .debug_macro   0x0000009f      0xac0 build/main.o
  .debug_macro   0x00000b5f      0x34e build/main.o
@@ -876,50 +877,61 @@ LOAD linker stubs
  .debug_macro   0x00002cab      0x11c build/tasks.o
  .debug_macro   0x00002dc7       0x9b build/tasks.o
  .debug_macro   0x00002e62       0x57 build/tasks.o
- .debug_macro   0x00002eb9      0x370 build/tasks.o
- .debug_macro   0x00003229       0x16 build/tasks.o
- .debug_macro   0x0000323f       0x4a build/tasks.o
- .debug_macro   0x00003289       0x34 build/tasks.o
- .debug_macro   0x000032bd       0x10 build/tasks.o
- .debug_macro   0x000032cd       0x52 build/tasks.o
- .debug_macro   0x0000331f      0x1de build/tasks.o
- .debug_macro   0x000034fd       0x16 build/tasks.o
- .debug_macro   0x00003513       0x29 build/tasks.o
- .debug_macro   0x0000353c       0x16 build/tasks.o
- .debug_macro   0x00003552       0x3c build/tasks.o
- .debug_macro   0x0000358e       0x98 build/tasks.o
- .debug_macro   0x00003626       0x16 build/tasks.o
- .debug_macro   0x0000363c      0x171 build/list.o
- .debug_macro   0x000037ad      0x162 build/port.o
- .debug_macro   0x0000390f      0x201 build/heap_4.o
+ .debug_macro   0x00002eb9      0x364 build/tasks.o
+ .debug_macro   0x0000321d       0x16 build/tasks.o
+ .debug_macro   0x00003233       0x4a build/tasks.o
+ .debug_macro   0x0000327d       0x34 build/tasks.o
+ .debug_macro   0x000032b1       0x10 build/tasks.o
+ .debug_macro   0x000032c1       0x52 build/tasks.o
+ .debug_macro   0x00003313      0x1de build/tasks.o
+ .debug_macro   0x000034f1       0x16 build/tasks.o
+ .debug_macro   0x00003507       0x29 build/tasks.o
+ .debug_macro   0x00003530       0x16 build/tasks.o
+ .debug_macro   0x00003546       0x3c build/tasks.o
+ .debug_macro   0x00003582       0x98 build/tasks.o
+ .debug_macro   0x0000361a       0x16 build/tasks.o
+ .debug_macro   0x00003630      0x171 build/list.o
+ .debug_macro   0x000037a1      0x162 build/port.o
+ .debug_macro   0x00003903      0x201 build/heap_4.o
 
-.debug_line     0x00000000     0x34b9
- .debug_line    0x00000000      0x358 build/main.o
- .debug_line    0x00000358     0x1f83 build/tasks.o
- .debug_line    0x000022db      0x45a build/list.o
- .debug_line    0x00002735      0x3c2 build/port.o
- .debug_line    0x00002af7      0x79e build/heap_4.o
- .debug_line    0x00003295       0x73 build/startup_stm32f103.o
- .debug_line    0x00003308      0x1b1 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+.debug_line     0x00000000     0x354f
+ .debug_line    0x00000000      0x379 build/main.o
+ .debug_line    0x00000379     0x1fad build/tasks.o
+ .debug_line    0x00002326      0x47b build/list.o
+ .debug_line    0x000027a1      0x3d8 build/port.o
+ .debug_line    0x00002b79      0x7c0 build/heap_4.o
+ .debug_line    0x00003339       0x73 build/startup_stm32f103.o
+ .debug_line    0x000033ac      0x1a3 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
-.debug_str      0x00000000    0x14bbb
- .debug_str     0x00000000    0x14bbb build/main.o
-                               0xed39 (size before relaxing)
- .debug_str     0x00014bbb    0x139f0 build/tasks.o
- .debug_str     0x00014bbb    0x10248 build/list.o
- .debug_str     0x00014bbb     0xefea build/port.o
- .debug_str     0x00014bbb    0x11de6 build/heap_4.o
- .debug_str     0x00014bbb       0x72 build/startup_stm32f103.o
- .debug_str     0x00014bbb      0x1a5 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+.debug_str      0x00000000    0x14bd4
+ .debug_str     0x00000000    0x14bd4 build/main.o
+                               0xed44 (size before relaxing)
+ .debug_str     0x00014bd4        0x0 build/tasks.o
+                              0x139da (size before relaxing)
+ .debug_str     0x00014bd4        0x0 build/list.o
+                              0x10232 (size before relaxing)
+ .debug_str     0x00014bd4        0x0 build/port.o
+                               0xf000 (size before relaxing)
+ .debug_str     0x00014bd4        0x0 build/heap_4.o
+                              0x11dd0 (size before relaxing)
+ .debug_str     0x00014bd4        0x0 build/startup_stm32f103.o
+                                 0x8b (size before relaxing)
+ .debug_str     0x00014bd4        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                                0x1a5 (size before relaxing)
 
 .comment        0x00000000       0x26
  .comment       0x00000000       0x26 build/main.o
                                  0x27 (size before relaxing)
- .comment       0x00000026       0x27 build/tasks.o
- .comment       0x00000026       0x27 build/list.o
- .comment       0x00000026       0x27 build/port.o
- .comment       0x00000026       0x27 build/heap_4.o
- .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+ .comment       0x00000026        0x0 build/tasks.o
+                                 0x27 (size before relaxing)
+ .comment       0x00000026        0x0 build/list.o
+                                 0x27 (size before relaxing)
+ .comment       0x00000026        0x0 build/port.o
+                                 0x27 (size before relaxing)
+ .comment       0x00000026        0x0 build/heap_4.o
+                                 0x27 (size before relaxing)
+ .comment       0x00000026        0x0 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                                 0x27 (size before relaxing)
 
 .ARM.attributes
                 0x00000000       0x2b
@@ -936,17 +948,17 @@ LOAD linker stubs
  .ARM.attributes
                 0x000000e1       0x21 build/startup_stm32f103.o
  .ARM.attributes
-                0x00000102       0x2d /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x00000102       0x2d /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
-.debug_frame    0x00000000      0x7a4
+.debug_frame    0x00000000      0x7a0
  .debug_frame   0x00000000       0x64 build/main.o
- .debug_frame   0x00000064      0x4e0 build/tasks.o
- .debug_frame   0x00000544       0x6c build/list.o
- .debug_frame   0x000005b0       0xd8 build/port.o
- .debug_frame   0x00000688       0xf0 build/heap_4.o
- .debug_frame   0x00000778       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x00000064      0x4dc build/tasks.o
+ .debug_frame   0x00000540       0x6c build/list.o
+ .debug_frame   0x000005ac       0xd8 build/port.o
+ .debug_frame   0x00000684       0xf0 build/heap_4.o
+ .debug_frame   0x00000774       0x2c /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_line_str
-                0x00000000       0x66
+                0x00000000       0x7c
  .debug_line_str
-                0x00000000       0x66 build/startup_stm32f103.o
+                0x00000000       0x7c build/startup_stm32f103.o
