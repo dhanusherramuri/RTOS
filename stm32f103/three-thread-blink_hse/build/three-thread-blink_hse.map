@@ -785,14 +785,14 @@ END GROUP
 OUTPUT(build/three-thread-blink_hse.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000     0x3a45
- .debug_info    0x00000000      0x5f1 build/main.o
- .debug_info    0x000005f1     0x2701 build/tasks.o
- .debug_info    0x00002cf2      0x2b2 build/list.o
- .debug_info    0x00002fa4      0x35e build/port.o
- .debug_info    0x00003302      0x5eb build/heap_4.o
- .debug_info    0x000038ed       0x23 build/startup_stm32f103.o
- .debug_info    0x00003910      0x135 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+.debug_info     0x00000000     0x3a43
+ .debug_info    0x00000000      0x5ef build/main.o
+ .debug_info    0x000005ef     0x2701 build/tasks.o
+ .debug_info    0x00002cf0      0x2b2 build/list.o
+ .debug_info    0x00002fa2      0x35e build/port.o
+ .debug_info    0x00003300      0x5eb build/heap_4.o
+ .debug_info    0x000038eb       0x23 build/startup_stm32f103.o
+ .debug_info    0x0000390e      0x135 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_abbrev   0x00000000      0xe8a
  .debug_abbrev  0x00000000      0x270 build/main.o
@@ -804,19 +804,19 @@ LOAD linker stubs
  .debug_abbrev  0x00000dd3       0xb7 /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_loclists
-                0x00000000     0x1c7d
+                0x00000000     0x1c7e
  .debug_loclists
-                0x00000000       0xf2 build/main.o
+                0x00000000       0xf3 build/main.o
  .debug_loclists
-                0x000000f2     0x15cd build/tasks.o
+                0x000000f3     0x15cd build/tasks.o
  .debug_loclists
-                0x000016bf       0x77 build/list.o
+                0x000016c0       0x77 build/list.o
  .debug_loclists
-                0x00001736       0x82 build/port.o
+                0x00001737       0x82 build/port.o
  .debug_loclists
-                0x000017b8      0x346 build/heap_4.o
+                0x000017b9      0x346 build/heap_4.o
  .debug_loclists
-                0x00001afe      0x17f /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x00001aff      0x17f /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
 .debug_aranges  0x00000000      0x310
  .debug_aranges

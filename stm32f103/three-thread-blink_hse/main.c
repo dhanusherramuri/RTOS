@@ -106,9 +106,9 @@ int main(void)
     gpio_output_init(led_b.port, led_b.pin);
     gpio_output_init(led_c.port, led_c.pin);
 
-    xTaskCreate(led_task, "led_1s", configMINIMAL_STACK_SIZE, (void *)&led_a, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(led_task, "led_1s", configMINIMAL_STACK_SIZE, (void *)&led_a, tskIDLE_PRIORITY + 0, NULL);
     xTaskCreate(led_task, "led_2s", configMINIMAL_STACK_SIZE, (void *)&led_b, tskIDLE_PRIORITY + 1, NULL);
-    xTaskCreate(led_task, "led_3s", configMINIMAL_STACK_SIZE, (void *)&led_c, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(led_task, "led_3s", configMINIMAL_STACK_SIZE, (void *)&led_c, tskIDLE_PRIORITY + 2, NULL);
 
     vTaskStartScheduler();
 
